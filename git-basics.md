@@ -22,41 +22,41 @@ tags: ['Git']
 |     |     |
 | --- | --- |
 | git init | initialize the working directory to use it as a git repository | 
-| git config --global user.name "your name" | set your username for commits | 
-| git config --global user.email "email@example.com" | set your email address for commits | 
+| git config --global user.name "***your name***" | set your username for commits | 
+| git config --global user.email "***email@example.com***" | set your email address for commits | 
 | git config user.name | view your username | 
 | git config user.email | view your email address | 
 | &nbsp; | &nbsp; |
-| git add <font color="grey">apple.html pen.html</font> | stage <font color="grey">apple.html</font> and <font color="grey">pen.html</font> (and make them *tracked files* if they are not yet) |
+| git add ***apple.html pen.html*** | stage ***apple.html*** and ***pen.html*** (and make them *tracked files* if they are not yet) |
 | git reset | unstage all staged files |
-| git reset <font color="grey">apple.html pen.html</font> | unstage <font color="grey">apple.html</font> and <font color="grey">pen.html</font> |
+| git reset ***apple.html pen.html*** | unstage ***apple.html*** and ***pen.html*** |
 | git status | view the following information <br> &nbsp;&nbsp;&nbsp; - a list of untracked files <br> &nbsp;&nbsp;&nbsp; - a list of unstaged tracked files updated from the last commit <br> &nbsp;&nbsp;&nbsp; - a list of staged files |
 | git commit | commit with the staged files |
 | git commit -a | stage all *tracked files* and then commit with them | 
 | git commit --amend | add staged changes to the most recent commit of the current branch instead of creating a new one (You should not do this for pushed commits) | 
 | &nbsp; | &nbsp; |
 | git reset --mixed HEAD~1 | undo the last commit without changing the contents of the working directory |
-| git revert <font color="grey">\<commit-id\></font> | commit a new snapshot to reverse the changes made in the commit of <font color="grey">\<commit-id\></font> |
-| git restore <font color="grey">apple.html</font> | change <font color="grey">apple.html</font> to match the latest commit |
+| git revert ***<commit-id\>*** | commit a new snapshot to reverse the changes made in the commit of ***<commit-id\>*** |
+| git restore ***apple.html*** | change ***apple.html*** to match the latest commit |
 | git clean -f | remove all untracked files from the repository |
 | &nbsp; | &nbsp; |
 | git log | view commit history in detailed format |
-| git log <font color="grey">apple.html</font> | view commit history of <font color="grey">apple.html</font> in detailed format |
+| git log ***apple.html*** | view commit history of ***apple.html*** in detailed format |
 | git log --oneline | view commit history in readable format |
-| git log --oneline <font color="grey">apple.html</font> | view commit history of <font color="grey">apple.html</font> in readable format |
+| git log --oneline ***apple.html*** | view commit history of ***apple.html*** in readable format |
 | &nbsp; | &nbsp; |
-| git tag -a <font color="grey">v1.0</font> | tag the latest commit with <font color="grey">v1.0</font> |
-| git tag -a <font color="grey">v1.0</font> <font color="grey">\<commit-id\></font> | tag the commit of <font color="grey">\<commit-id\></font> with <font color="grey">v1.0</font> |
-| git tag -d <font color="grey">v1.0</font> | remove the tag of <font color="grey">v1.0</font> from commit history |
+| git tag -a ***v1.0*** | tag the latest commit with ***v1.0*** |
+| git tag -a ***v1.0*** ***<commit-id\>*** | tag the commit of ***<commit-id\>*** with ***v1.0*** |
+| git tag -d ***v1.0*** | remove the tag of ***v1.0*** from commit history |
 | git tag -n3 | view a list of existing tags along with the first 3 lines of the descriptive message of each |
 | &nbsp; | &nbsp; |
 | git branch | list the existing branches |
-| git branch <font color="grey">ppap</font> | create <font color="grey">ppap</font> branch which refers to the commit of the current branch |
-| git branch -d <font color="grey">ppap</font> | delete <font color="grey">ppap</font> branch |
-| git checkout <font color="grey">ppap</font> | switch to <font color="grey">ppap</font> branch : load the commit of <font color="grey">ppap</font> branch into the working directory |
-| git checkout <font color="grey">master</font> | switch to <font color="grey">master</font> branch : load the commit of <font color="grey">master</font> branch into the working directory |
-| git checkout <font color="grey">\<commit-id\></font> | switch to *unnamed* branch whose commit ID is <font color="grey">\<commit-id\></font> : load the commit of <font color="grey">\<commit-id\></font> into the working directory|
-| git merge <font color="grey">ppap</font> | merge <font color="grey">ppap</font> branch with the current branch | 
-| git rebase -i <font color="grey">ppap</font> | move the base commit of the current branch to <font color="grey">ppap</font> branch | 
-| git log <font color="grey">master</font>..<font color="grey">ppap</font> | display all commits contained in <font color="grey">ppap</font> branch that aren't in <font color="grey">master</font> branch |
+| git branch ***ppap*** | create ***ppap*** branch which refers to the commit of the current branch |
+| git branch -d ***ppap*** | delete ***ppap*** branch |
+| git checkout ***ppap*** | switch to ***ppap*** branch : load the commit of ***ppap*** branch into the working directory |
+| git checkout ***master*** | switch to ***master*** branch : load the commit of ***master*** branch into the working directory |
+| git checkout ***<commit-id\>*** | switch to ***unnamed*** branch whose commit ID is ***<commit-id\>*** : load the commit of ***<commit-id\>*** into the working directory|
+| git merge ***ppap*** | merge ***ppap*** branch with the current branch | 
+| git rebase -i ***ppap*** | move the base commit of the current branch to ***ppap*** branch | 
+| git log ***master***..***ppap*** | display all commits contained in ***ppap*** branch that aren't in ***master*** branch |
 | &nbsp; | &nbsp; |
