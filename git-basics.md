@@ -15,7 +15,7 @@ tags: ['Git']
 | commit (verb) | To create a new snapshot that reflects the changes in staged files |
 | commit (noun) | A committed snapshot / an act of committing |
 | commit ID | A unique SHA-1 hash assigned to a commit |
-| branch | An isolated working place which has its own commit history and can diverge from or merge with another branch <br>(**Technical definition** : A branch is a pointer which refers to a specific commit, and its reference target moves along with each new commit) | 
+| branch | A pointer which refers to a specific commit, and its reference target moves along with each new commit | 
 | master (or main) | The default branch name which is automatically created when the first commit is created |
 | clone | To make a copy of a repository |
 | local repository | A copy of a repository |
@@ -39,7 +39,7 @@ tags: ['Git']
 | git add ***apple.html pen.html*** | stage ***apple.html*** and ***pen.html*** (and make them *tracked files* if they are not yet) |
 | git reset | unstage all staged files |
 | git reset ***apple.html pen.html*** | unstage ***apple.html*** and ***pen.html*** |
-| git status | view the following information <br> &nbsp;&nbsp;&nbsp; - a list of untracked files <br> &nbsp;&nbsp;&nbsp; - a list of unstaged tracked files updated from the last commit <br> &nbsp;&nbsp;&nbsp; - a list of staged files |
+| git status | view the following information <br> &nbsp;&nbsp;&nbsp; - a list of untracked files <br> &nbsp;&nbsp;&nbsp; - a list of unstaged tracked files updated from the last commit <br> &nbsp;&nbsp;&nbsp; - a list of staged files (= index) |
 | git commit | commit staged files |
 | git commit -a | stage all *tracked files* and then commit with them | 
 | git commit --amend | add staged changes to the most recent commit instead of creating a new one (You should not do this for pushed commits) | 
@@ -60,21 +60,25 @@ tags: ['Git']
 | git tag -d ***v1.0*** | remove the tag of ***v1.0*** from commit history |
 | git tag -n3 | view a list of existing tags along with the first 3 lines of the descriptive message of each |
 | &nbsp; | &nbsp; |
-| git branch | list the existing branches |
+| git branch | list all local branches |
 | git branch ***ppap*** | create ***ppap*** branch which refers to the commit of the current branch |
 | git branch -d ***ppap*** | delete ***ppap*** branch |
-| git checkout ***ppap*** | switch to ***ppap*** branch ; load the commit of ***ppap*** branch into the working tree |
-| git checkout ***<commit-id\>*** | switch to *unnamed* branch whose commit ID is ***<commit-id\>*** ; load the commit of ***<commit-id\>*** into the working tree |
+| git checkout ***ppap*** | switch to ***ppap*** branch and load the last commit of it into the working tree |
+| git checkout ***<commit-id\>*** | switch to *unnamed* branch which refers to ***<commit-id\>*** and load the last commit of it into the working tree |
 | git merge ***ppap*** | merge ***ppap*** branch with the current branch | 
-| git rebase -i ***ppap*** | squeeze commits created in ***ppap*** branch into the current branch after the last commit which is shared between them | 
+| git rebase -i ***ppap*** | squeeze commits which only exist in ***ppap*** branch into the current branch after the last commit which is shared between them | 
+| git rebase --continue | restart the rebasing process after editing a commit |
+| git rebase --abort | abandon the current rebasing process |
 | git log ***master***..***ppap*** | display all commits contained in ***ppap*** branch that aren't in ***master*** branch |
 | &nbsp; | &nbsp; |
 | git clone ***<remote-path\>*** | clone a repository of ***<remote-path\>*** onto the current directory | 
 | git remote add ***<remote-name\>*** ***<remote-path\>*** | add a remote repository : connect the current repository to ***<remote-path\>*** and name it ***<remote-name\>*** |
+| git remote rm ***<remote-name\>*** | remove a remote repository : remove the connection to ***<remote-name\>*** from the current repository |
 | git remote -v | list all remote repositories |
 | git branch -r | list all remote-tracking branches |
 | git branch -vv | list all local branches with the upstream name of each |
 | git branch --set-upstream-to=***origin***/***ppap*** ***ppap*** | set the remote-tracking branch called ***origin/ppap*** as the upstream of local ***ppap*** branch |
-| git fetch ***<remote-name\>*** | update remote-tracking branches for ***<remote-name\>*** | 
-| git pull ***<remote-name\>*** | update remote-tracking branches for ***<remote-name\>*** and merge them with associated local branches | 
-| git pull --rebase ***<remote-name\>*** | update remote-tracking branches for ***<remote-name\>*** and rebase them into associated local branches | 
+| git fetch ***origin ppap*** | update the remote-tracking branch named ***origin/ppap*** | 
+| git pull ***origin ppap*** | update the remote-tracking branch named ***origin/ppap*** and merge it with the current branch | 
+| git pull --rebase ***origin ppap*** | update the remote-tracking branch named ***origin/ppap*** and rebase it into the current branch | 
+| git push ***origin ppap*** | merge the current local branch with the remote-tracking branch named ***origin/ppap*** and upload it to the corresponding remote repository |  
