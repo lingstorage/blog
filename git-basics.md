@@ -17,6 +17,7 @@ tags: ['Git']
 | commit ID | A unique SHA-1 hash assigned to a commit |
 | branch | A pointer which refers to a specific commit, and its reference target moves along with each new commit | 
 | master (or main) | The default branch name which is automatically created when the first commit is created |
+| HEAD | The most recent commit of a branch |
 | clone | To make a copy of a repository |
 | local repository | A copy of a repository |
 | origin | The original repository of a local repository |
@@ -30,6 +31,7 @@ tags: ['Git']
 
 |     |     |
 | --- | --- |
+| git version | display version information about git |
 | git init | initialize the current directory to use it as a git repository | 
 | git config --global user.name "***your name***" | set your username for commits | 
 | git config --global user.email "***email@example.com***" | set your email address for commits | 
@@ -37,6 +39,7 @@ tags: ['Git']
 | git config user.email | view your email address | 
 | &nbsp; | &nbsp; |
 | git add ***apple.html pen.html*** | stage ***apple.html*** and ***pen.html*** (and make them *tracked files* if they are not yet) |
+| git add .| stage all files in the working tree (and make them *tracked files* if they are not yet) |
 | git reset | unstage all staged files |
 | git reset ***apple.html pen.html*** | unstage ***apple.html*** and ***pen.html*** |
 | git status | view the following information <br> &nbsp;&nbsp;&nbsp; - a list of untracked files <br> &nbsp;&nbsp;&nbsp; - a list of unstaged tracked files updated from the last commit <br> &nbsp;&nbsp;&nbsp; - a list of staged files (= index) |
@@ -46,7 +49,7 @@ tags: ['Git']
 | &nbsp; | &nbsp; |
 | git reset --mixed HEAD~1 | undo the last commit without changing the contents of the working tree |
 | git revert ***<commit-id\>*** | commit a new snapshot to reverse the changes made in the commit of ***<commit-id\>*** |
-| git restore ***apple.html*** | change ***apple.html*** to match the latest commit |
+| git restore --source ***<commit-id\>*** ***apple.html*** | change ***apple.html*** to match the commit of ***<commit-id\>*** |
 | git clean -f | remove all untracked files from the repository |
 | &nbsp; | &nbsp; |
 | git log | view commit history in detailed format |
@@ -63,6 +66,7 @@ tags: ['Git']
 | git branch | list all local branches |
 | git branch ***ppap*** | create ***ppap*** branch which refers to the commit of the current branch |
 | git branch -d ***ppap*** | delete ***ppap*** branch |
+| git branch -m ***old-name*** ***new-name***| rename a branch from ***old-name*** to ***new-name*** |
 | git checkout ***ppap*** | switch to ***ppap*** branch and load the last commit of it into the working tree |
 | git checkout ***<commit-id\>*** | switch to *unnamed* branch which refers to ***<commit-id\>*** and load the last commit of it into the working tree |
 | git merge ***ppap*** | merge ***ppap*** branch with the current branch | 
@@ -70,6 +74,13 @@ tags: ['Git']
 | git rebase --continue | restart the rebasing process after editing a commit |
 | git rebase --abort | abandon the current rebasing process |
 | git log ***master***..***ppap*** | display all commits contained in ***ppap*** branch that aren't in ***master*** branch |
+| &nbsp; | &nbsp; |
+| git diff | view the difference between the unstaged files and the most recent commit in the current branch |
+| git diff --cached | view the difference between the staged files and the most recent commit in the current branch |
+| git diff ***X***..***Y*** | view the difference between ***X*** and ***Y*** <br> (***X***,***Y***: commit ID or branch name)|
+| &nbsp; | &nbsp; |
+| git stash | temporarily stash uncommitted changes in the current branch to create a clean working tree |
+| git stash pop | retrieve stashed changes |
 | &nbsp; | &nbsp; |
 | git clone ***<remote-path\>*** | clone a repository of ***<remote-path\>*** onto the current directory | 
 | git remote add ***<remote-name\>*** ***<remote-path\>*** | add a remote repository : connect the current repository to ***<remote-path\>*** and name it ***<remote-name\>*** |
@@ -82,3 +93,4 @@ tags: ['Git']
 | git pull ***origin ppap*** | update the remote-tracking branch named ***origin/ppap*** and merge it with the current branch | 
 | git pull --rebase ***origin ppap*** | update the remote-tracking branch named ***origin/ppap*** and rebase it into the current branch | 
 | git push ***origin ppap*** | merge the current local branch with the remote-tracking branch named ***origin/ppap*** and upload it to the corresponding remote repository |  
+| git push -d ***origin ppap*** | delete the remote-tracking branch named ***origin/ppap*** and the one of the corresponding remote repository |  
