@@ -57,6 +57,7 @@ tags: ['Git']
 | git log --oneline | view commit history in readable format |
 | git log --oneline ***apple.html*** | view commit history of ***apple.html*** in readable format |
 | git reflog | view change history in a local repository — this command is useful when you want to revive commits deleted by *git reset* |
+| git blame ***apple.html*** | show who last modified each line of ***apple.html*** |
 | &nbsp; | &nbsp; |
 | git tag -a ***v1.0*** | tag the latest commit with ***v1.0*** |
 | git tag -a ***v1.0*** ***<commit-id\>*** | tag the commit of ***<commit-id\>*** with ***v1.0*** |
