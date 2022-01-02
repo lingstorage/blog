@@ -31,6 +31,12 @@ Display the current date and time.
 <br><br>
 
 ```
+% echo $SHELL
+```
+Display the current shell.
+<br><br>
+
+```
 % echo $PATH
 ```
 Display PATH.
