@@ -77,7 +77,7 @@ Copy all contents (not directories) of apple and orange to fruit.
 % mv apple orange fruit
 % mv apple/ orange/ fruit
 ```
-Move apple and orange directories to fruit directory <br>
+Move apple and orange directories to fruit directory. <br>
 (You don't need -r to move directory)
 <br><br>
 
@@ -133,7 +133,7 @@ Strong request to terminate the process. If this command doesn't work, your only
 ```
 % exit
 ```
-End the current shell session 
+End the current shell session.
 <br><br>
 
 ```
@@ -151,7 +151,7 @@ Put the absolute path to the current directory into the clipboard.
 ```
 % ls *.csv | pbcopy
 ```
-Put the list of all csv files in the current directory into the clipboard
+Put the list of all csv files in the current directory into the clipboard.
 <br><br>
 
 ```
@@ -169,7 +169,13 @@ Append the output of *ls* command into tmp.txt. If tmp.txt doesn't exist it will
 ```
 % du -sh <directory-name> 
 ```
-Display the disk usage of \<directory-name\>
+Display the disk usage of \<directory-name\>.
+<br><br>
+
+```
+% export PATH="$PATH:`pwd`/fruit"
+```
+Add the fruit directory of the working directory to the PATH.
 <br><br>
 
 ## Keyboard Shortcuts 
